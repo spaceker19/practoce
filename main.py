@@ -17,7 +17,7 @@ train_house ,test_house ,train_val ,test_val =train_test_split(house,val ,test_s
 
 
 #creating our model
-model = DecisionTreeRegressor(random_state=10)      #after many train I got random_state =10 is good
+model = DecisionTreeRegressor(max_leaf_nodes=58,random_state=10)      #after many train I got random_state =10 is good
 
 #fitting the model
 model.fit(train_house,train_val)
