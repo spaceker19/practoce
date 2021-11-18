@@ -25,4 +25,4 @@ prediction = model.predict(test_house)
 
 #error in the model
 error = mean_absolute_error(prediction,test_val)
-print(error)                                            #181909.5877405989
+print(error)

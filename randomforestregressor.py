@@ -7,7 +7,7 @@ from sklearn.metrics import mean_absolute_error
 #here uploding the data
 data = pd.read_csv('data.csv')
 #columns need more for the house
-features = ['bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot','floors', 'waterfront', 'sqft_above']
+features = ['bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot','floors', 'sqft_above']
 house = data[features]
 val = data.price
 
@@ -22,7 +22,7 @@ modal.fit(train_house,train_val)
 prediction = modal.predict(test_house)
 error = mean_absolute_error(test_val,prediction)
 print(error)                                                    #181392.44145439603
-
+print(modal.score(train_house,train_val))                       #0.8666505935661103
 
 
 
