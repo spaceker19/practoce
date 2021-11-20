@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error
+import pickle
 
 
 #here uploding the data
@@ -20,9 +21,28 @@ modal = RandomForestRegressor(n_estimators = 300,random_state=0)
 #fitting the model
 modal.fit(train_house,train_val)
 prediction = modal.predict(test_house)
+
+
+filename = 'randomforestregressor.sav'
+pickle.dump(modal, open(filename, 'wb'))
 error = mean_absolute_error(test_val,prediction)
-print(error)                                                    #181392.44145439603
-print(modal.score(train_house,train_val))                       #0.8666505935661103
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# print(error)                                                    #181392.44145439603
+# print(modal.score(train_house,train_val))                       #0.8666505935661103
 
 
 

@@ -1,6 +1,8 @@
 import pandas as pd
 from xgboost import XGBRegressor
 from sklearn.model_selection import train_test_split
+
+import pickle
 data = pd.read_csv(r'C:\Users\Lenovo\PycharmProjects\practoce\data.csv')
 
 object_data = data.dtypes == object
@@ -18,5 +20,7 @@ print(test_val.shape)
 modal = XGBRegressor(n_estimators=1000)  #0.9999922692299098
 modal.fit(train_house,train_val )
 
+
+modal.save_model(r"C:\Users\Lenovo\PycharmProjects\practoce\xgboost.model")
 
 print(modal.score(train_house,train_val))
