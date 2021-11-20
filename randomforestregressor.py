@@ -1,7 +1,6 @@
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_absolute_error
 import pickle
 
 
@@ -25,25 +24,8 @@ prediction = modal.predict(test_house)
 
 filename = 'randomforestregressor.sav'
 pickle.dump(modal, open(filename, 'wb'))
-error = mean_absolute_error(test_val,prediction)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# print(error)                                                    #181392.44145439603
-# print(modal.score(train_house,train_val))                       #0.8666505935661103
-
+print(modal.score(train_house,train_val))
 
 
 # In this regressor it's take more time as compered to DecisionTree beacuse of this model contained maltipule

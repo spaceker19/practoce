@@ -20,7 +20,8 @@ print(test_val.shape)
 modal = XGBRegressor(n_estimators=1000)  #0.9999922692299098
 modal.fit(train_house,train_val )
 
-
+filename = r"C:\Users\Lenovo\PycharmProjects\practoce\xgboost.sav"
+pickle.dump(modal , open(filename ,'wb'))
 modal.save_model(r"C:\Users\Lenovo\PycharmProjects\practoce\xgboost.model")
 
 print(modal.score(train_house,train_val))
